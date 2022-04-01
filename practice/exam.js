@@ -50,14 +50,14 @@ console.log("-----------------------------")
 function sum2(a) {
     let result = 0;
     for(let i = 0;i<a.length;i++){
-        let str = Number(a[i]);
+        let str = parseInt(a[i]); // Number도 가능
         result += str;
     }
     return result;
 }
-console.log(sum(["1", "2", "3", "4"]));
-console.log(sum(["3", "4", "5"]));
-console.log(sum(["20", "21"]));
+console.log(sum2(["1", "2", "3", "4"]));
+console.log(sum2(["3", "4", "5"]));
+console.log(sum2(["20", "21"]));
 // 5. 문자열을 숫자로 변환해서 합계 출력 10 / 12 / 41 X
 console.log("-----------------------------")
 
