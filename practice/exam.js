@@ -5,14 +5,21 @@ console.log(doSomething(3, 1, 2));
 console.log(doSomething(1, 2, 3));
 console.log(doSomething(1, 3, 2));
 // 1.출력 3 / 3 / 3 최대값 출력
-
+console.log("-----------------------------")
 function countNumber(a) {
-
+    let result = 0;
+    for(let i = 0;i<a.length;i++){
+        if(typeof(a[i])==='number'){
+            result++;
+        }
+    }
+    return result;
 }
 console.log(countNumber([1, 2, 3]));
 console.log(countNumber(["1", 2, 3]));
 console.log(countNumber(["1", 2, 3, 4, true]));
-// 2 .출력 3 / 2 / 3 numbertype 수 출력
+// 2 .출력 3 / 2 / 3 numbertype 수 출력  
+console.log("-----------------------------")
 
 function createArray(count, min, max) {
     let a = [];
@@ -25,24 +32,38 @@ console.log(createArray(4, 11, 15));
 console.log(createArray(5, 21, 25));
 console.log(createArray(6, 31, 35));
 // 3 .min 이상 max 이하 수 뽑아내기
+console.log("-----------------------------")
 
 function sum(a) {
-
+    let result = 0;
+    for(let i = 0;i<a.length;i++){
+        result += a[i];
+    }
+    return result;
 }
 console.log(sum([1, 2, 3, 4]));
 console.log(sum([3, 4, 5]));
 console.log(sum([20, 21]));
 // 4. 배열에 들어간 수들의 합계 출력 10 / 12 / 41
+console.log("-----------------------------")
 
-function sum(a) {
-
+function sum2(a) {
+    let result = 0;
+    for(let i = 0;i<a.length;i++){
+        let str = Number(a[i]);
+        result += str;
+    }
+    return result;
 }
 console.log(sum(["1", "2", "3", "4"]));
 console.log(sum(["3", "4", "5"]));
 console.log(sum(["20", "21"]));
-// 5. 문자열을 숫자로 변환해서 합계 출력 10 / 12 / 41
-function insert(a, index, value) {
+// 5. 문자열을 숫자로 변환해서 합계 출력 10 / 12 / 41 X
+console.log("-----------------------------")
 
+function insert(a, index, value) {
+    a.splice(index,0,value);
+    return a;
 }
 let a = [1, 2, 3];
 insert(a, 2, 33)
