@@ -12,7 +12,11 @@ a[0][0] = 10;
 console.log(a);
 console.log("--------------------------");
 //출력 [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] [ [ 10, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ]
-// function CreateArray() {}
+// function CreateArray() {
+//     let arr = [1,2,3];
+//     let arr1 = [[arr,arr,arr],[arr,arr,arr]];
+//     return arr1;
+// }
 // let b = CreateArray();
 // console.log(b);
 // b[0][0] = 10;
