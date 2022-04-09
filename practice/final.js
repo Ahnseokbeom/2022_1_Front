@@ -78,11 +78,29 @@ persons1 배열을 복제해서 persons2 배열을 생성한다.
 persons2 배열을 새로 배열을 만들어서, persons1 배열의 값들을 복사. deep copy가 되도록 복제해야 한다.
 즉 배열만 복제 되는 것이 아니고, 배열이 참조하는 객체들도 복제 되어야 한다. persons2 배열을 출력한다.
  */
+let person1 = persons; // deep copy
+person1[0] = {name : "adwa", age : 200}; 
+console.log(person1);
+console.log(persons);
+let a = [1,2,3,4]; 
+let b = a.slice(0); // no deep copy
+b[0] = 5;
+console.log(a);
+console.log(b);
 /*
 11. let persons = [ { name: "홍길동", age: 16 }, { name: "임꺽정", age: 18 }, { name: "전우치", age: 19 } ];
 이 배열을 age 내림차순으로 정렬하여 출력하는 코드를 구현하라.
  */
+function sor(i,j){
+    return j-i;
+}
+let persons1 = [ 
+{ name: "홍길동", age: 16 },
+{ name: "임꺽정", age: 18 },
+{ name: "전우치", age: 19 } ];
+console.log(persons1.sort((a,b) => b.age - a.age));
 /*
 12. 위 persons 배열에서 age 최대값 사람을 찾아서 출력하는 코드를 구현하라.
 reduce 메소드를 사용하여 구현하라.
  */
+console.log(persons1.reduce((a,b) => a.age>b.age ? a : b));
