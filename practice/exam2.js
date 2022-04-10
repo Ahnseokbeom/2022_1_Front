@@ -53,8 +53,6 @@ function contains(d, value) {
         if(parseInt(d[i])===value){
             st = "true";
             break;
-        }else{
-            continue;
         }
     }
     return st;
