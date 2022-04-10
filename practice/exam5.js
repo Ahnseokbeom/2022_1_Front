@@ -79,7 +79,7 @@ getExtension(a)
 const obj = { a: 1 };
 const newObj = Object.assign({}, obj);
 
-newObj.a = 2;
+obj.a = 2;
 
 console.log(obj);
 console.log(newObj);
