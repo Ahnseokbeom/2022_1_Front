@@ -24,7 +24,7 @@ console.log("-----------------------------")
 function createArray(count, min, max) {
     let a = [];
     for(let i = 0;i<count;i++){
-        a[i] = Math.floor(Math.random()*(max-min))+min;
+        a[i] = Math.floor(Math.random()*(max-min+1)+min);
     }
     return a;
 }
@@ -58,7 +58,7 @@ function sum2(a) {
 console.log(sum2(["1", "2", "3", "4"]));
 console.log(sum2(["3", "4", "5"]));
 console.log(sum2(["20", "21"]));
-// 5. 문자열을 숫자로 변환해서 합계 출력 10 / 12 / 41 X
+// 5. 문자열을 숫자로 변환해서 합계 출력 10 / 12 / 41 
 console.log("-----------------------------")
 
 function insert(a, index, value) {
