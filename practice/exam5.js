@@ -52,6 +52,14 @@ console.log(a2);
 (2) Math.random() 메소드를 사용하여, 1 이상 100 이하의 정수 난수를 100개 생성해서, 배열에 채운다.
 (3) 배열에서 짝수의 갯수를 구해서 출력하라. (반복문 없이, 전역변수 없이, 배열의 메소드와 배열의 속성을 사용해서 구현하라.)
 */
+let arr3 = [];
+for(let i = 0;i<100;i++){
+    arr3[i] = Math.floor(Math.random()*100+1);
+}
+let arr4 = arr3.filter(number => number%2==0);
+console.log(arr4.length);
+
+
 /*
 5) mid5.js
 let a = [ "hello.html", "world.js", "readme.txt" ];
