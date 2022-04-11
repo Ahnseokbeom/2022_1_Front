@@ -13,12 +13,12 @@ console.log(a);
 console.log("--------------------------");
 //출력 [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] [ [ 10, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ]
 function CreateArray() { // X
-    let arr1 = new Array(3);
-    for(let i = 0;i<arr1.length;i++){
-        arr1[i] = new Array(3);
-        arr1[i] = [1,2,3];
-    }
-    return arr1;
+    let arr1 = [1,2,3];
+    let arr2 = [];
+    arr2[0] = arr1;
+    arr2[1] = arr1;
+    arr2[2] = arr1;
+    return arr2;
 }
 let b = CreateArray();
 console.log(b);

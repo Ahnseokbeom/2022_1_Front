@@ -1,5 +1,5 @@
 function getPropertyValue(obj, propertyName) { // X
-    return obj.propertyName;
+    
 }
 let p1 = {name: '홍길동',age: 1};
 console.log(getPropertyValue(p1, "name")); // p1 객체의 name 속성값이 출력된다. 
@@ -9,6 +9,13 @@ let r1 = {width: 11,height: 22};
 console.log(getPropertyValue(r1, "width"));// r1 객체의 width 속성값이 출력된다
 console.log(getPropertyValue(r1, "height")); // r1 객체의 height 속성값이 출력된다
 // 출력 : 홍길동 16 11 22
+
+
+
+
+
+
+
 function compareIdentity(p1, p2) {
     return p1 == p2;
 }
@@ -32,8 +39,15 @@ console.log(order1.price, order1.quantity, order1.amount)
 // 생성자 파라미터는 제품, 가격, 수량이다. amount 속성값은 주문 금액(가격 * 수량) 이어야 한다.
 // 출력 900 3 2700 900 2 1800
 function deepCopy(persons) { // X
-    let per = Object.assign(persons);
-    return per;
+    let result = [];
+    for(let i = 0;i<persons.length;i++){
+        result[i] = {};
+        for(let key in persons[i]){
+            let value = persons[i][key];
+            result[i][key] = value;
+        }
+    }
+    return result;
 }
 let persons1 = [
     {name: "홍길동",age: 16},
