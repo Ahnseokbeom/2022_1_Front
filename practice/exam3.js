@@ -12,16 +12,19 @@ a[0][0] = 10;
 console.log(a);
 console.log("--------------------------");
 //출력 [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] [ [ 10, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ]
-// function CreateArray() {
-//     let arr = [1,2,3];
-//     let arr1 = [[arr,arr,arr],[arr,arr,arr]];
-//     return arr1;
-// }
-// let b = CreateArray();
-// console.log(b);
-// b[0][0] = 10;
-// console.log(b);
-// console.log("--------------------------");
+function CreateArray() { // X
+    let arr1 = new Array(3);
+    for(let i = 0;i<arr1.length;i++){
+        arr1[i] = new Array(3);
+        arr1[i] = [1,2,3];
+    }
+    return arr1;
+}
+let b = CreateArray();
+console.log(b);
+b[0][0] = 10;
+console.log(b);
+console.log("--------------------------");
 // 출력 [ [ 1, 2, 3 ], [ 1, 2, 3 ], [ 1, 2, 3 ] ] [ [ 10, 2, 3 ], [ 10, 2, 3 ], [ 10, 2, 3 ] ] X
 
 function remove(c, value) {
