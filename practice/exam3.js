@@ -1,7 +1,6 @@
 function createArray() {
-    let arr = new Array(3);
-    for(let i = 0;i<arr.length;i++){
-        arr[i] = new Array(3);
+    let arr = [];
+    for(let i = 0;i<3;i++){
         arr[i] = [1,2,3];
     }
     return arr;
