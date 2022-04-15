@@ -1,5 +1,5 @@
 function add(a, ...values) {
-    let a1 = a.concat(...values);
+    let a1 = [a,...values];
     return a1;
 }
 let a = [0, 1];
