@@ -1,0 +1,45 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <script src="https://unpkg.com/vue@next"></script>
+        <style>
+            div#app {
+                padding: 30px;
+                margin: 30px auto;
+                width: 800px;
+                border: 1px solid #ccc;
+                box-shadow: 3px 3px 3px #aaa;
+            }
+            table {
+                border-collapse: collapse;
+                margin: auto;
+            }
+            td {
+                padding: 15px;
+                border: 1px solid black;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <table> <!--td 8 / tr 1-->
+                <td v-for="(r, word) in row_size">
+                    {{r}} * {{word+1}} = {{r+1*word+1}}
+                </td>
+            </table>
+        </div>
+        <script type="text/javascript">
+            let app = {
+                data() {
+                    word = [1,2,3,4,5,6,7,8,9]
+                    return {row_size: 8, word};
+
+                }
+            };
+            Vue
+                .createApp(app)
+                .mount("#app");
+        </script>
+    </body>
+</html>
