@@ -34,8 +34,9 @@
             </div>
             <hr/>
             <div>
+                <label>합계</label>
                 <div class = "total">
-                    {{total()}}
+                    {{total}}
                 </div>
             </div>
         </div>
@@ -44,17 +45,15 @@
                 data() {
                     return {quantity: 1, price: 150};
                 },
-                methods: {
-                    total() {
-                        let result = quantity*price;
-                        if(result >= 100000){
+                computed: {
+                    total(){
+                        let s = String(this.quantity * this.price);
+                        if(s >= 10000){
                             return {
-                                color : red,
-                                result
-                            }
-                        }else{
-                            return result
+                                color : "red" 
+                            };
                         }
+                        return s; 
                     }
                 }
             };
