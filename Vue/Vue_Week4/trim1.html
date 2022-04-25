@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <!-- 현재 이렇게 코드를 작성하면 작성한 글의 대한 앞뒤 공백이 포함되어서 나온다-->
+        <meta charset="UTF-8" />
+        <script src = "https://unpkg.com/vue@next"></script>
+        <style>
+            div#app { padding: 30px; margin : 30px auto; width : 400px;
+            border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa;}
+        </style>
+    </head>
+    <body>
+        <div id = "app">
+            <textarea v-model = "message" cols = "50" rows = "7"></textarea>
+            <pre>[{{message}}]</pre>
+        </div>
+        <script type="text/javascript">
+            let app = {
+                data(){
+                    return {
+                        message : ''
+                    }
+                }
+            };
+            Vue.createApp(app).mount("#app");
+        </script>
+    </body>
+</html>
