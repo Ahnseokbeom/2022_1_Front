@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script src="https://unpkg.com/vue@next"></script>
+        <link rel="stylesheet" type="text/css" href="todo1.css">
+        <style>
+div {
+    padding: 30px;
+    margin: 30px auto;
+    width: 600px;
+}
+input[type=text] {
+    margin-bottom: 3px;
+}
+table { border-collapse: collapse; width: 90px; margin-bottom: 10px;}
+td { border: 1px solid black; text-align: center;}
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <h1>페이지4</h1>
+            <table>
+                <tr v-for="todo in todoList">
+                    <td>{{todo.name}}</td>
+                    <td>{{todo.age}}</td>
+                </tr>
+            </table>
+            이름 : <input type="text" v-model="n_name"/><br/>
+            나이 : <input type="text" v-model="n_age"/>
+            <br/><button type="button" v-on:click="addTodo">저장</button>
+        </div>
+        <script type="text/javascript">
+            let app = {
+                data() {
+                    return {
+                        todoList: [{name : "홍길동", age : 16},{name : "임꺽정", age : 17},{name : "전우치", age : 18}],
+                        n_name: "",
+                        n_age : 0,
+                    };
+                },
+                methods: {
+                    addTodo: function () {
+                        this.todoList.push(this.n_name,this.n_age);
+                    }
+                }
+            };
+            Vue
+                .createApp(app)
+                .mount("#app");
+        </script>
+    </body>
+</html>
