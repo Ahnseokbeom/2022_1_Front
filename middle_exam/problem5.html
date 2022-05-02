@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      div#box {
+        margin: 20px auto;
+        padding: 20px;
+        width: 300px;
+        border: 1px solid gray;
+        box-shadow: 5px 5px 5px #aaa;
+      }
+      .red {
+        background-color: #fbb;
+      }
+      .green {
+        background-color: #bfb;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="box" v-bind:class="{ green: value%2 == 0, red: value%2 != 0 }">
+        <h1>{{ value%2 == 0 ? '짝수' : '홀수'}}</h1>
+        {{value}}
+        <hr />
+        <input type="text" v-model.number="value" />
+      </div>
+    </div>
+    <script type="text/javascript">
+      let app = {
+        data() {
+          return {
+            value: 0,
+          }
+        },
+      }
+      Vue.createApp(app).mount('#app')
+    </script>
+  </body>
+</html>
