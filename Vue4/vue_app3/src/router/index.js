@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 // import HomeView from '@/views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
-import TodoView from '../views/TodoView.vue'
 import NoticeView from '../views/NoticeView.vue'
 
 const routes = [
@@ -25,7 +24,7 @@ const routes = [
   {
     path: '/todo',
     name: 'todo',
-    component: TodoView
+    component: () => import(/* webpackChunkName: "about" */ '@/views/TodoView.vue')
   },
   {
     path: '/notice',
