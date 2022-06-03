@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Exam3Child from './Exam3Child.vue'
+import Exam3Child from '../components/Exam3Child.vue'
 
 export default {
   name: 'Exam3View',

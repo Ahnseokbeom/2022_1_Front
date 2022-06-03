@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Exam1Child from './Exam1Child.vue'
+import Exam1Child from '../components/Exam1Child.vue'
 
 export default {
   name: 'Exam1View',
