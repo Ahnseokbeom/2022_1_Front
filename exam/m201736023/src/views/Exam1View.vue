@@ -1,20 +1,26 @@
 <template>
-  <div class="exam1">
+  <div>
     <h1>Exam1</h1>
+    <input type="text" v-model="value" />
+    <Exam1Child v-bind:msg="value" />
   </div>
-  <input type="text" v-model="value"/><br />
-  <Exam1Child v-bind:title = value></Exam1Child>
 </template>
+
 <script>
-import Exam1Child from '../components/Exam1Child.vue'
+import Exam1Child from './Exam1Child.vue'
+
 export default {
-    components : {
-        Exam1Child
-    },
-    data(){
-        return {
-            value : ""
-        }
-    }
+  name: 'Exam1View',
+  data() {
+    return {
+      value: 'hello'
+    };
+  },
+  components: { Exam1Child }
 }
 </script>
+
+<style scoped>
+  div { text-align: center; }
+  input { padding: 5px; margin-bottom: 5px; }  
+</style>

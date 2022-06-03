@@ -1,22 +1,28 @@
 <template>
-  <div class="exam2">
+  <div>
     <h1>Exam2</h1>
+    <input type="text" v-model.number="a" /> <br/>
+    <input type="text" v-model.number="b" />
+    <Exam2Child v-bind:a="a" v-bind:b="b" />
   </div>
-  <input type="number" v-model="value1"/><br />
-  <input type="number" v-model="value2"/><br />
- <!-- <Exam2Child v-bind:value1 = value1 v-bind:value2=value2 v-bind:title = value1+value2 v-bind:key = "value1"></Exam2Child> -->
- <h1>{{value1 + value2}}</h1>
 </template>
+
 <script>
-import Exam2Child from '../components/Exam2Child.vue'
+import Exam2Child from './Exam2Child.vue'
+
 export default {
-    components : {
-        Exam2Child
-    },
-    data(){
-        return{
-            value1 = 0,value2 = 0
-        }
-    }
+  name: 'Exam1View',
+  data() {
+    return {
+      a: 3,
+      b: 4
+    };
+  },
+  components: { Exam2Child }
 }
 </script>
+
+<style scoped>
+  div { text-align: center; }
+  input { padding: 5px; margin-bottom: 5px; }  
+</style>

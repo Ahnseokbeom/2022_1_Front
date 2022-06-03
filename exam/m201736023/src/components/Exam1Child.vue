@@ -1,16 +1,20 @@
 <template>
-  <div class="id">
-      <h1>{{title}}</h1>
+  <div>
+    {{ msg }}
   </div>
 </template>
+
 <script>
+
 export default {
-    name : 'Exam1Child',
-    props : ["title"],
+  name: 'Exam1Child',
+  props: [ 'msg' ]
 }
 </script>
+
 <style scoped>
- div{
-     background-color: greenyellow;
- }
+  div { 
+    font-size: 18pt; padding: 5px; margin: 0 auto; 
+    background-color: #dfd;
+  }
 </style>

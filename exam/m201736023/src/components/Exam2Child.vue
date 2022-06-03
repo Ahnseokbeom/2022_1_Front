@@ -1,27 +1,21 @@
 <template>
-  <div class="id">
-      <h1>{{value1}}+{{value2}} = {{title}}</h1>
+  <div>
+    {{ a }} + {{ b }} = {{ a + b }}
   </div>
 </template>
+
 <script>
+
 export default {
-    name : 'Exam1Child',
-    props : {value1 : Number,
-    value2 : Number, title : Number},
-    data() {
-            return {
-                pvalue: this.value
-        }
-        },
-        //     methods: {
-        //     myChange($event) {
-        //         this.$emit('input', $event.target.value);
-        //     },
-        // },
+  name: 'Exam2Child',
+  props: [ 'a', 'b' ]
 }
 </script>
+
 <style scoped>
- div{
-     background-color: greenyellow;
- }
+  div { 
+    font-size: 18pt; padding: 5px; 
+    text-align: center; 
+    background-color: #dfd;
+  }
 </style>
