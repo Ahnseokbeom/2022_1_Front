@@ -7,12 +7,9 @@
         <div>
             <label>날짜:</label>
             <input type="date" v-model="todo.due_date"/>
-            <button type="button" @click="save" :disabled="!todo.title">
-                저장</button>
-            <button type="button" @click="remove">
-                삭제</button>
-            <button type="button" @click="cancel">
-                취소</button>
+            <button type="button" @click="save" :disabled="!todo.title">저장</button>
+            <button type="button" @click="remove">삭제</button>
+            <button type="button" @click="cancel">취소</button>
         </div>
     </div>
 </template>
@@ -25,8 +22,7 @@ export default {
     },
     mounted() {
         if (this.$route.params.id) {
-            axios
-                .get("http://localhost:8088/todo/" + this.$route.params.id)
+            axios.get("http://localhost:8088/todo/" + this.$route.params.id)
                 .then(response => this.todo = response.data)
                 .catch(error => this.onError(error));
         } else 
@@ -35,27 +31,22 @@ export default {
     methods: {
         save() {
             if (this.todo.id) 
-                axios
-                    .put("http://localhost:8088/todo/update", this.todo)
+                axios.put("http://localhost:8088/todo/update", this.todo)
                     .then(() => this.$router.push('todolist'))
                     .catch(error => this.onError(error));
             else 
-                axios
-                    .post("http://localhost:8088/todo/add", this.todo)
+                axios.post("http://localhost:8088/todo/add", this.todo)
                     .then(() => this.$router.push('todolist'))
                     .catch(error => this.onError(error));
             }
         ,
         remove() {
-            axios
-                .delete("http://localhost:8088/todo/delete?idlist=" + this.todo.id)
+            axios.delete("http://localhost:8088/todo/delete?idlist=" + this.todo.id)
                 .then(() => this.$router.push('todolist'))
                 .catch(error => this.onError(error));
         },
         cancel() {
-            this
-                .$router
-                .push('todolist');
+            this.$router.push('todolist');
         },
         onError: function (error) {
             console.log(error);
