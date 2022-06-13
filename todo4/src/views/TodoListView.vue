@@ -29,25 +29,16 @@ export default {
     },
     methods: {
         reload() {
-            axios
-                .get("http://localhost:8088/todo/list")
+            axios.get("http://localhost:8088/todo/list")
                 .then(response => this.todoList = response.data)
                 .catch(error => this.onError(error));
         },
         add() {
-            this
-                .$router
+            this.$router
                 .push("todo");
         },
         edit(id) {
-            this
-                .$router
-                .push({
-                    name: "todo",
-                    params: {
-                        id: id
-                    }
-                });
+            this.$router.push({name: "todo",params: {id: id}});
         },
         onError: function (error) {
             console.log(error);
