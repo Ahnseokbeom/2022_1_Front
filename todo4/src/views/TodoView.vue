@@ -41,6 +41,7 @@ export default {
             }
         ,
         remove() {
+            if(confirm("삭제하시겠습니까?"))
             axios.delete("http://localhost:8088/todo/delete?idlist=" + this.todo.id)
                 .then(() => this.$router.push('todolist'))
                 .catch(error => this.onError(error));

@@ -34,8 +34,7 @@ export default {
                 .catch(error => this.onError(error));
         },
         add() {
-            this.$router
-                .push("todo");
+            this.$router.push("todo");
         },
         edit(id) {
             this.$router.push({name: "todo",params: {id: id}});
